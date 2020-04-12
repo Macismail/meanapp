@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodenon server.js",
+    "start": "node server.js",
     "build": "cd client && ng build --prod",
+    "heroku-postbuild": "cd client && ng build --prod",
     "client": "cd client && ng serve",
     "dev": "concurrently -n 'server, client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
   },

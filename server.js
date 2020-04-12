@@ -35,7 +35,7 @@ app.use('/api', routes);
 app.use('/auth', routes);
 
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/build'));
+  app.use(express.static('client/dist'));
 }
 
 app.listen(PORT, console.log(`Server Starting in port: ${PORT}`));
