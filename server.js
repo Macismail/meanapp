@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path');
 // const routes = require('./routes/api');
 const routes = require('./routes/auth');
 
@@ -34,8 +35,8 @@ app.use(morgan('tiny'));
 app.use('/api', routes);
 app.use('/auth', routes);
 
-// if(process.env.NODE_ENV === 'production'){
-//   app.use(express.static('client/dist'));
-// }
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/dist/client'));
+}
 
 app.listen(PORT, console.log(`Server Starting in port: ${PORT}`));
