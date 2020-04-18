@@ -1,14 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-info bg-info">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="home">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="register">Register <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" routerLink="login">Login</a>
+      <a class="nav-item nav-link" routerLink="register" *ngIf="!auth.isAuthenticated">Register <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="login" *ngIf="!auth.isAuthenticated">Login</a>
+    </div>
+    <div class="nav navbar-nav navbar-right">
+      <a class="nav-item nav-link" *ngIf="auth.isAuthenticated">Welcome {{auth.name}}</a>
+      <a class="nav-item nav-link" *ngIf="auth.isAuthenticated" (click)="auth.logout()">logout</a>
     </div>
   </div>
 </nav>
+<h2>loggedin: {{logged}}</h2>
 <router-outlet></router-outlet>

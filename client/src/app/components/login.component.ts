@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AuthServcice} from '../services/auth.service';
+import { AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'login',
@@ -40,7 +40,7 @@ import { AuthServcice} from '../services/auth.service';
 export class LoginComponent {
   loginData;
 
-  constructor(private ld: FormBuilder, private auth: AuthServcice){
+  constructor(private ld: FormBuilder, private auth: AuthService){
     this.loginData = ld.group({
       email: '',
       password: ''

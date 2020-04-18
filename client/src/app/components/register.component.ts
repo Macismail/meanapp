@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AuthServcice} from '../services/auth.service';
+import { AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'register',
@@ -10,7 +10,7 @@ import { AuthServcice} from '../services/auth.service';
 export class RegisterComponent {
   form;
 
-  constructor(private fb: FormBuilder, private auth: AuthServcice){
+  constructor(private fb: FormBuilder, private auth: AuthService){
     this.form = fb.group({
       firstname: '',
       lastname: '',

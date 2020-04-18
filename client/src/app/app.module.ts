@@ -8,8 +8,9 @@ import { HomeComponent } from './components/home.component';
 import { RegisterComponent } from './components/register.component';
 import { NotFoundComponent } from './components/not-found.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthServcice } from './services/auth.service';
 import { LoginComponent } from './components/login.component';
+import { WebService } from './services/web.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { LoginComponent } from './components/login.component';
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
-  providers: [AuthServcice],
+  providers: [AuthService, WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
