@@ -10,7 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd client && ng build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false",
     "client": "cd client && ng serve",
     "dev": "concurrently -n 'server, client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
