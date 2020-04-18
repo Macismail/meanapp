@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "the linda angular way application",
   "main": "index.js",
+  "engines": {
+    "node": ">=13.5.0",
+    "npm": ">=6.13.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "cd client && ng build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false",
     "client": "cd client && ng serve",
     "dev": "concurrently -n 'server, client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
   },
