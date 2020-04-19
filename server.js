@@ -45,10 +45,10 @@ app.use('/api', routes);
 app.use('/auth', routes);
 
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/dist'));
+  app.use(express.static(__dirname+'client/dist'));
   // redirect the queries to the index file
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname+'/dist/client/index.html'));
   });
 
 }
