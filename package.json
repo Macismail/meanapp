@@ -11,7 +11,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false",
-    "postinstall": "cd client && ng build --aot --prod",
     "client": "cd client && ng serve",
     "dev": "concurrently -n 'server, client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
   },
