@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
 
-  BASE_URL = "http://localhost:8080/auth";
+  BASE_URL = "auth";
   
   constructor(private http: HttpClient, private router: Router){}
 
